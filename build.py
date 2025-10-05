@@ -55,11 +55,9 @@ def main():
         )
         subprocess.run(["make", "-C", SRC_DIR, "mrproper"])
 
-        # Building Defconfig
-        print(
-            f"[ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ] Building {DEFCONFIG}"
-        )
-        subprocess.run(build_defconfig_cmd)
+    # Building Defconfig
+    print(f"[ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ] Building {DEFCONFIG}")
+    subprocess.run(build_defconfig_cmd)
 
     # Building Kernel
     print(f"[ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ] Compiling Kernel.")

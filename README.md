@@ -20,7 +20,7 @@ DEFCONFIG = '<DEVICE DEFCONFIG>'
 ### Debian:
 
 ``` sh
-sudo apt install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig clang axel xz-utils make ccache openssl libssl-dev bc gcc-aarch64-linux-gnu python-is-python3 android-tools-adb android-tools-fastboot
+sudo apt install git-core gnupg flex bison build-essential zip curl wget zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig clang axel xz-utils make ccache openssl libssl-dev bc gcc-aarch64-linux-gnu python-is-python3 android-tools-adb android-tools-fastboot
 ```
 
 ### Fedora
