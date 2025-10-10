@@ -37,13 +37,26 @@ def main():
     parser.add_argument(
         "-c",
         "--clean",
-        help="Run mrproper before building kernel.",
+        help="Run mrproper to clean build.",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "--env",
+        help="Setup enviroment without compiling kernel",
         action="store_true",
     )
 
     args = parser.parse_args()
 
     MAKE_PARAMS = setup_env()
+
+    if args.env:
+        print(
+            f"[ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ] Enviroment was configured."
+        )
+        return
+
     build_defconfig_cmd = ["make", DEFCONFIG] + MAKE_PARAMS
     build_cmd = ["make"] + MAKE_PARAMS
 
@@ -54,6 +67,10 @@ def main():
             f"[ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ] Running mrproper for cleanup."
         )
         subprocess.run(["make", "-C", SRC_DIR, "mrproper"])
+
+        print(f"[ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ] Cleanup done.")
+
+        return
 
     # Building Defconfig
     print(f"[ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ] Building {DEFCONFIG}")
